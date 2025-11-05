@@ -15,12 +15,10 @@ async function getWeather(lat, lon) {
     if (!res.ok) throw new Error("Error while receiving data");
     const data = await res.json();
     const weather = data.data[0];
-
     cityNameEl.textContent = weather.city_name;
     tempEl.textContent = `Temperature: ${weather.temp}°C`;
     descEl.textContent = `Weather: ${weather.weather.description}`;
     iconEl.src = `https://www.weatherbit.io/static/img/icons/${weather.weather.icon}.png`;
-
     document.body.className = "";
     const mainWeather = weather.weather.description.toLowerCase();
     if (mainWeather.includes("дожд")) {
@@ -30,7 +28,6 @@ async function getWeather(lat, lon) {
     } else if (mainWeather.includes("ясн") || mainWeather.includes("sun")) {
       document.body.classList.add("clear");
     }
-
   } catch (error) {
     errorEl.textContent = "Failed to retrieve data. Check coordinates or connection.";
   }
