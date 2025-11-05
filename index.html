@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Погода</title>
+    <title>Weather</title>
+    <link rel="icon" href="assets/weather_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="app">
-        <h1>Приложение "Погода"</h1>
+        <h1>Weather app</h1>
         <div class="coords">
-            <input type="text" id="lat" placeholder="Широта">
-            <input type="text" id="lon" placeholder="Долгота">
-            <button id="getWeatherBtn">Показать погоду</button>
+            <input type="text" id="lat" placeholder="Latitude">
+            <input type="text" id="lon" placeholder="Longitude">
+            <button id="getWeatherBtn">Show weather</button>
         </div>
         <div class="cities">
-            <button data-lat="53.9006" data-lon="27.5590">Минск</button>
-            <button data-lat="55.7558" data-lon="37.6173">Москва</button>
-            <button data-lat="48.8566" data-lon="2.3522">Париж</button>
-            <button data-lat="40.7128" data-lon="-74.0060">Нью-Йорк</button>
-            <button data-lat="51.5074" data-lon="-0.1278">Лондон</button>
-            <button data-lat="35.6895" data-lon="139.6917">Токио</button>
-            <button data-lat="41.9028" data-lon="12.4964">Рим</button>
-            <button data-lat="52.5244" data-lon="13.4105">Берлин</button>
-            <button data-lat="34.0522" data-lon="-118.2437">Лос-Анджелес</button>
-            <button data-lat="-33.8688" data-lon="151.2093">Сидней</button>
+            <button data-lat="53.9006" data-lon="27.5590">Minsk</button>
+            <button data-lat="55.7558" data-lon="37.6173">Moscow</button>
+            <button data-lat="48.8566" data-lon="2.3522">Paris</button>
+            <button data-lat="40.7128" data-lon="-74.0060">New York</button>
+            <button data-lat="51.5074" data-lon="-0.1278">London</button>
+            <button data-lat="35.6895" data-lon="139.6917">Tokyo</button>
+            <button data-lat="41.9028" data-lon="12.4964">Rome</button>
+            <button data-lat="52.5244" data-lon="13.4105">Berlin</button>
+            <button data-lat="34.0522" data-lon="-118.2437">Los Angeles</button>
+            <button data-lat="-33.8688" data-lon="151.2093">Sydney</button>
         </div>
             <h2 id="cityName"></h2>
             <p id="temperature"></p>

@@ -12,13 +12,13 @@ async function getWeather(lat, lon) {
     errorEl.textContent = "";
     const url = `https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${lon}&key=${API_KEY}&lang=ru`;
     const res = await fetch(url);
-    if (!res.ok) throw new Error("Ошибка при получении данных");
+    if (!res.ok) throw new Error("Error while receiving data");
     const data = await res.json();
     const weather = data.data[0];
 
     cityNameEl.textContent = weather.city_name;
-    tempEl.textContent = `Температура: ${weather.temp}°C`;
-    descEl.textContent = `Погода: ${weather.weather.description}`;
+    tempEl.textContent = `Temperature: ${weather.temp}°C`;
+    descEl.textContent = `Weather: ${weather.weather.description}`;
     iconEl.src = `https://www.weatherbit.io/static/img/icons/${weather.weather.icon}.png`;
 
     document.body.className = "";
@@ -32,7 +32,7 @@ async function getWeather(lat, lon) {
     }
 
   } catch (error) {
-    errorEl.textContent = "Не удалось получить данные. Проверьте координаты или соединение.";
+    errorEl.textContent = "Failed to retrieve data. Check coordinates or connection.";
   }
 }
 
@@ -42,7 +42,7 @@ getWeatherBtn.addEventListener("click", () => {
   if (lat && lon) {
     getWeather(lat, lon);
   } else {
-    errorEl.textContent = "Введите корректные координаты!";
+    errorEl.textContent = "Please enter correct coordinates!";
   }
 });
 
